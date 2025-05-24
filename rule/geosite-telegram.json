@@ -1,0 +1,28 @@
+{
+    "version": 1,
+    "rules": [
+        {
+            "domain_suffix": [
+                "quiz.directory",
+                "telegram.space",
+                "cdn-telegram.org",
+                "comments.app",
+                "telegram.me",
+                "telesco.pe",
+                "graph.org",
+                "telegram.org",
+                "usercontent.dev",
+                "telegram-cdn.org",
+                "telega.one",
+                "t.me",
+                "telegra.ph",
+                "telegram.dog",
+                "fragment.com",
+                "tdesktop.com",
+                "tx.me",
+                "tg.dev",
+                "contest.com"
+            ]
+        }
+    ]
+}

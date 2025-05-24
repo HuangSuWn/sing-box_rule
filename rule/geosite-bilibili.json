@@ -1,0 +1,62 @@
+{
+    "version": 1,
+    "rules": [
+        {
+            "domain": [
+                "upos-hz-mirrorakam.akamaized.net"
+            ]
+        },
+        {
+            "domain_suffix": [
+                "bili22.cn",
+                "bilicdn4.com",
+                "b23.tv",
+                "bilibilipay.com",
+                "bilibiligame.net",
+                "bilicomics.com",
+                "bili2233.cn",
+                "bilibili.cn",
+                "bilibili.tv",
+                "bilicdn2.com",
+                "biliapi.net",
+                "bilivideo.cn",
+                "im9.com",
+                "dreamcast.hk",
+                "biligo.com",
+                "anitama.cn",
+                "bilibili.com",
+                "biliimg.com",
+                "mincdn.com",
+                "bilibili.cc",
+                "biligame.net",
+                "yo9.com",
+                "bigfunapp.cn",
+                "bilibilipay.cn",
+                "bilicomic.com",
+                "hdslb.com",
+                "animetamashi.com",
+                "bilicdn5.com",
+                "acgvideo.com",
+                "bilibili.net",
+                "bili23.cn",
+                "bili33.cn",
+                "biligame.co",
+                "biligame.com",
+                "bilibiligame.co",
+                "bilicdn1.com",
+                "anitama.net",
+                "bilivideo.net",
+                "biliapi.com",
+                "animetamashi.cn",
+                "bilicdn3.com",
+                "acg.tv",
+                "maoercdn.com",
+                "bilivideo.com",
+                "bilibiligame.cn",
+                "biliintl.com",
+                "hdslb.org",
+                "bigfun.cn"
+            ]
+        }
+    ]
+}
