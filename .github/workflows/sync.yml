@@ -2,7 +2,7 @@ name: Config Update
 
 on:
   push:
-    branches: [ main-use ]
+    branches: [ main ]
     paths:
       - 'source/**'
       - 'self-host/**'
