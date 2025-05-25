@@ -13,6 +13,7 @@ geosite:
 
   # 第三方扩展规则
   - "https://github.com/HGSUWN/sing-box_rule/raw/refs/heads/main/self-host/cn_domain.json"
+  - "https://github.com/DustinWin/ruleset_geodata/raw/refs/heads/sing-box-ruleset/cn.srs"
   - "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/games-cn.srs"
   - "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"
   - "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/rule/Clash/ChinaMax/ChinaMax_Domain.yaml"
@@ -25,8 +26,8 @@ geoip:
   - "https://github.com/SagerNet/sing-geoip/raw/refs/heads/rule-set/geoip-cn.srs"
   
   # 基础 IP 规则
-  - "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/cnip.srs"
-  - "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/privateip.srs"
+  - "https://github.com/DustinWin/ruleset_geodata/raw/refs/heads/sing-box-ruleset/cnip.srs"
+  - "https://github.com/DustinWin/ruleset_geodata/raw/refs/heads/sing-box-ruleset/privateip.srs"
   - "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/rule/Clash/ChinaMax/ChinaMax_IP.yaml"
   - "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/rule/Clash/ChinaIPs/ChinaIPs_IP.yaml"
   
