@@ -108,7 +108,7 @@ jobs:
             f.write("# 域名按原始 hosts 文件出现顺序排列\n\n")
             for domain in filtered_domains:
                 # 转换为 Adblock 格式
-                f.write(f"||{domain}^\n")  # 核心转换语句
+                f.write(f"{domain}\n")  # 核心转换语句
         
         print("规则集文件已生成: self-host/ad-block.txt")
         EOF
