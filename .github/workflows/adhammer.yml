@@ -3,10 +3,11 @@ name: Update AdHammer Ruleset
 on:
   push:
     paths:
+      - 'self-host/ad-whitelist.txt'
       - '.github/workflows/adhammer.yml'
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 20 * * *'
     
 jobs:
   build-ruleset:
@@ -23,7 +24,7 @@ jobs:
         
     - name: Install dependencies
       run: pip install requests tqdm
-      
+        
     - name: Download and process hosts file
       run: |
         python - <<EOF
@@ -76,13 +77,36 @@ jobs:
                             domains.append(domain)  # 按出现顺序添加
                             seen_domains.add(domain)  # 标记为已处理
         
-        print(f"找到 {len(domains)} 个唯一域名 (保持原始顺序)")
+        print(f"原始找到 {len(domains)} 个唯一域名 (保持原始顺序)")
+        
+        # 加载白名单（支持中文注释）
+        whitelist = set()
+        whitelist_file = 'self-host/ad-whitelist.txt'
+        if os.path.exists(whitelist_file):
+            print(f"加载白名单文件: {whitelist_file}")
+            with open(whitelist_file, 'r', encoding='utf-8') as f:
+                for line in f:
+                    # 跳过注释行和空行
+                    line = line.strip()
+                    if not line or line.startswith('#'):
+                        continue
+                    
+                    # 添加域名到白名单（转换为小写）
+                    whitelist.add(line.lower())
+        
+        # 应用白名单过滤
+        filtered_domains = [d for d in domains if d not in whitelist]
+        removed_count = len(domains) - len(filtered_domains)
+        
+        print(f"应用白名单后: 保留 {len(filtered_domains)} 个域名, 排除 {removed_count} 个")
         
         # 保存为规则集文件
         os.makedirs('self-host', exist_ok=True)
         with open('self-host/ad-block.txt', 'w', encoding='utf-8') as f:
-            f.write(f"# 域名数量: {len(domains)}\n")
-            for domain in domains:
+            f.write(f"# 域名总数: {len(filtered_domains)}\n")
+            f.write(f"# 白名单排除: {removed_count} 个域名\n")
+            f.write("# 域名按原始 hosts 文件出现顺序排列\n\n")
+            for domain in filtered_domains:
                 f.write(f"{domain}\n")
         
         print("规则集文件已生成: self-host/ad-block.txt")
