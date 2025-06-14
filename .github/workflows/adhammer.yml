@@ -30,6 +30,7 @@ jobs:
         python - <<EOF
         import os
         import re
+        import json
         import requests
         from tqdm import tqdm
         
@@ -100,29 +101,35 @@ jobs:
         
         print(f"应用白名单后: 保留 {len(filtered_domains)} 个域名, 排除 {removed_count} 个")
         
-        # 保存为规则集文件
-        os.makedirs('self-host', exist_ok=True)
-        with open('self-host/ad-block.txt', 'w', encoding='utf-8') as f:
-            f.write(f"# 域名总数: {len(filtered_domains)}\n")
-            f.write(f"# 白名单排除: {removed_count} 个域名\n")
-            f.write("# 域名按原始 hosts 文件出现顺序排列\n\n")
-            for domain in filtered_domains:
-                # 转换为 Adblock 格式
-                f.write(f"domain_suffix,{domain}\n")  # 核心转换语句
+        # 构建JSON规则集
+        ruleset = {
+            "version": 1,
+            "rules": [
+                {
+                    "domain_suffix": filtered_domains
+                }
+            ]
+        }
         
-        print("规则集文件已生成: self-host/ad-block.txt")
+        # 保存为JSON文件
+        os.makedirs('self-host', exist_ok=True)
+        json_file = 'self-host/ad-block.json'
+        with open(json_file, 'w', encoding='utf-8') as f:
+            json.dump(ruleset, f, indent=2, ensure_ascii=False)
+        
+        print(f"规则集文件已生成: {json_file}")
         EOF
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: ad-block
-        path: self-host/ad-block.txt
+        path: self-host/ad-block.json
         
     - name: Commit and push changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add self-host/ad-block.txt
+        git add self-host/ad-block.json
         git commit -m "自动更新规则集" || echo "没有变更，跳过提交"
         git push
