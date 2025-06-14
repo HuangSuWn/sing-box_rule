@@ -171,17 +171,17 @@ class RuleParser:
 
         # 处理 geosite
         if geosite_links:
-            geosite_result = self.generate_json_file(geosite_links, geosite_file, rule_set_name)
+            geosite_result = self.generate_json_file(geosite_links, geosite_file, rule_set_name, type='geosite')
             final_results.append(("geosite", geosite_result))
 
         # 处理 geoip
         if geoip_links:
-            geoip_result = self.generate_json_file(geoip_links, geoip_file, rule_set_name)
+            geoip_result = self.generate_json_file(geoip_links, geoip_file, rule_set_name, type='geoip')
             final_results.append(("geoip", geoip_result))
 
         # 处理 process
         if process_links:
-            process_result = self.generate_json_file(process_links, process_file, rule_set_name)
+            process_result = self.generate_json_file(process_links, process_file, rule_set_name, type='process')
             final_results.append(("process", process_result))
 
         # 输出最终处理结果
@@ -258,7 +258,7 @@ class RuleParser:
 
         return None
 
-    def generate_json_file(self, links, output_file, rule_set_name):
+    def generate_json_file(self, links, output_file, rule_set_name, type='geosite'):
         """
         生成合并后的 JSON 文件并返回处理统计信息。
         """
@@ -274,6 +274,13 @@ class RuleParser:
         if len(json_file_list) == 1 and config.trust_upstream:
             single_file_stats = json_file_list[0]
             final_rules = single_file_stats
+
+            # 如果 type 不是 'process'，则去除 process_name 条目 (debug)
+            if type != 'process':
+                final_rules = [
+                    rule for rule in final_rules
+                    if 'process_name' not in rule
+                ]
 
             # 统计信息
             domain_count = len(single_file_stats.get("domain", []))
@@ -304,10 +311,10 @@ class RuleParser:
             return statistics
         # 否则调用 merge_json
         else:
-            return self.merge_json(json_file_list, output_file, rule_set_name=rule_set_name)
+            return self.merge_json(json_file_list, output_file, rule_set_name=rule_set_name, type=type)
 
     def merge_json(self, json_file_list, output_file, rule_set_name,
-                   enable_trie_filtering=config.enable_trie_filtering):
+                   enable_trie_filtering=config.enable_trie_filtering, type='geosite'):
         """
         合并 JSON 文件并返回规则统计信息。
         """
@@ -360,6 +367,13 @@ class RuleParser:
             for category, values in merged_rules.items()
             if values
         ]
+
+        # 如果 type 不是 'process'，则去除 process_name 条目 (debug)
+        if type != 'process':
+            final_rules = [
+                rule for rule in final_rules
+                if 'process_name' not in rule
+            ]
 
         # 保存结果
         try:
@@ -593,7 +607,8 @@ class RuleParser:
             os.system(f"sing-box rule-set compile --output {srs_path} {json_file_path}")
             logging.debug(f"成功生成 SRS 文件 {srs_path}")
 
-class ConfigParser:
+
+class SB_ConfigParser:
     def __init__(self):
         self.config = config
 
@@ -601,9 +616,9 @@ class ConfigParser:
         # 固定字段
         fixed_rules = [
             {"inbound": ["tun-in", "mixed-in"], "action": "sniff", "timeout": "1s"},
-            {"clash_mode": "Global", "action": "route", "outbound": "GLOBAL"},
-            {"clash_mode": "Direct", "action": "route", "outbound": "Direct-Out"},
-            {"type": "logical", "mode": "or", "rules": [{"protocol": "dns"}, {"port": 53}], "action": "hijack-dns"},
+            {"clash_mode": "全局代理", "action": "route", "outbound": "默认代理"},
+            {"clash_mode": "全局直连", "action": "route", "outbound": "直连"},
+            {"protocol": "dns", "action": "hijack-dns"},
             {"port": 853, "network": "tcp", "action": "reject", "method": "default", "no_drop": False},
             {"port": 443, "network": "udp", "action": "reject", "method": "default", "no_drop": False}
         ]
@@ -612,7 +627,7 @@ class ConfigParser:
         rules = []
         rule_set = []
 
-        for file in os.listdir('./rule'):
+        for file in os.listdir('./rule/singbox'):
             if file.endswith('.srs'):
                 tag = os.path.splitext(file)[0]
                 # 添加规则集
@@ -620,34 +635,24 @@ class ConfigParser:
                     "tag": tag,
                     "type": "remote",
                     "format": "binary",
-                    "url": f"https://raw.githubusercontent.com/vstar37/sing-box-ruleset/main/rule/singbox/{file}",
-                    "download_detour": "VPN"
+                    "url": f"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/{file}",
+                    "download_detour": "下载 (海外服务)"
                 })
 
                 # 排除 fakeip 和 @cn规则
                 if 'fakeip' in tag or 'geolocation-!cn' in tag or '@cn' in tag:
                     continue
 
-                # 判断规则类型并生成相应的动作
-                if 'blocker' in tag:
+                # 判断规则类型并生成相应的动作, blocker 默认使用 adguard-blocker@default
+                if 'adguard-blocker@default' in tag:
                     rules.append({"rule_set": [tag], "action": "reject", "method": "default", "no_drop": False})
                 elif 'direct' in tag or '@cn' in tag:
-                    rules.append({"rule_set": [tag], "action": "route", "outbound": "Direct-Out"})
-                elif 'category' in tag:
+                    rules.append({"rule_set": [tag], "action": "route", "outbound": "直连"})
+                elif 'category' in tag or 'process' in tag:
                     outbound = self.determine_outbound(tag)
-                    rules.append({"rule_set": [tag], "action": "route", "outbound": outbound})
-                elif 'process' in tag:
-                    match = re.search(r'process-filter-([^@]+)', tag)  # 匹配 'process-' 后的部分，直到遇到 '@'
-                    if match:
-                        process_tag = match.group(1)  # 提取的部分是 'communicationApp'
-                        # 提取 'communication' 作为关键词
-                        process_keyword = process_tag.lower().replace('app',
-                                                                      '')  # 去掉 'App'，例如 'communicationApp' -> 'communication'
-                        # 根据关键字确定outbound
-                        outbound = self.determine_outbound(process_keyword)
-
-                        # 将生成的规则添加到规则列表
+                    if outbound:  # 只在命中时添加
                         rules.append({"rule_set": [tag], "action": "route", "outbound": outbound})
+
                 elif 'geoip-geolocation' in tag:
                     match = re.search(r'geoip-geolocation-(\w+)', tag)  # 匹配 'geoip-geolocation-' 后的国家代码
                     if match:
@@ -669,13 +674,40 @@ class ConfigParser:
                 "rules": all_rules,
                 "rule_set": rule_set,
                 "auto_detect_interface": True,
-                "final": "Others"
+                "final": "默认代理"
             }
         }
-
         # 写入带换行的紧凑 JSON
-        with open('route.json', 'w') as f:
-            json.dump(route_config, f, separators=(',', ':'), indent=2)
+        with open('./src/config/singbox/sb_route.json', 'w', encoding='utf-8') as f:
+            json.dump(route_config, f, ensure_ascii=False, separators=(',', ':'), indent=2)
+
+        config_dir = os.path.abspath("./src/config/singbox")
+        output_dir = os.path.abspath("./template/singbox")
+        output_file = os.path.join(config_dir, "config.json")
+        target_file = os.path.join(output_dir, "config.json")
+
+        conversion_command = [
+            "sing-box", "merge", "config.json", "-C",
+             config_dir , "-D", config_dir
+        ]
+        logging.debug(f"生成 singbox 配置文件: {' '.join(conversion_command)}")
+
+        # 运行命令
+        result = subprocess.run(conversion_command, capture_output=True, text=True)
+        # 检查执行结果
+        if result.returncode == 0:
+            logging.info("✅ sing-box 配置合并成功")
+            try:
+                # 确保目标目录存在
+                os.makedirs(output_dir, exist_ok=True)
+                # 移动 config.json 文件
+                shutil.move(output_file, target_file)
+                logging.info(f"✅ 已将配置文件移动至: {target_file}")
+            except Exception as e:
+                logging.error(f"❌ 移动配置文件失败: {e}")
+        else:
+            logging.error(f"❌ sing-box 配置合并失败，错误码 {result.returncode}")
+            logging.error(f"stderr: {result.stderr}")
 
     def merge_geosite_geoip_rules(self, rules):
         """检查并合并 geosite 和 geoip 规则"""
@@ -716,23 +748,24 @@ class ConfigParser:
 
     def determine_outbound(self, tag):
         # 根据tag关键字确定outbound
-        if 'video' in tag:
-            return "Video Service"
-        if 'download' in tag:
-            return "Download Service"
-        if 'communication' in tag:
-            return "Communication Service"
-        if 'game' in tag:
-            return "Game Service"
-        if 'vpn' in tag:
-            return "VPN"
-        if 'media' in tag:
-            return "Media Service"
-        if 'nsfw' in tag:
-            return "NSFW Content"
+        if 'video' in tag and '!cn' in tag:
+            return "影音 (海外服务)"
+        if 'download' in tag and '!cn' in tag:
+            return "下载 (海外服务)"
+        if 'communication' in tag and '!cn' in tag:
+            return "通信 (海外服务)"
+        if 'game' in tag and '!cn' in tag:
+            return  "游戏 (海外服务)"
+        if 'vpn' in tag and '!cn' in tag:
+            return "VPN (区域伪装)"
+        if 'media' in tag and '!cn' in tag:
+            return  "媒体 (海外服务)"
+        if 'nsfw' in tag and '!cn' in tag:
+            return "成人 (过滤服务)"
         if 'direct' in tag:
-            return "Direct-Out"
-        return "Direct-Out"
+            return "直连"
+        else:
+            return None
 
     def rule_priority(self, rule):
         # 定义规则的优先级
@@ -740,18 +773,18 @@ class ConfigParser:
             return 0
         if "clash_mode" in rule:
             return 1
-        if "type" in rule and rule["type"] == "logical":
+        if "protocol" in rule:
             return 2
         if "port" in rule:
             return 3
         if "rule_set" in rule:
             if 'blocker' in rule["rule_set"][0] and 'process' not in rule["rule_set"][0]:
                 return 4
-            if 'geolocation' in rule["rule_set"][0]:
-                return 5
             if '@cn' in rule["rule_set"][0]:
-                return 6
+                return 5
             if 'category' in rule["rule_set"][0] and 'direct' not in rule["rule_set"][0]:
+                return 6
+            if 'geolocation' in rule["rule_set"][0]:
                 return 7
             if 'direct' in rule["rule_set"][0] and 'process' not in rule["rule_set"][0]:
                 return 8
@@ -763,10 +796,14 @@ class ConfigParser:
     def determine_geolocation_outbound(self, country_code):
         # 根据国家编号确定outbound
         geolocation_map = {
-            'jp': 'JP Proxy',
-            'us': 'US Proxy',
-            'cn': 'CN Proxy',
-            'uk': 'UK Proxy',
+            'jp': '日本线路',
+            'us': '美国线路',
+            'cn': '大陆线路',
+            'uk': '香港线路',
+            'eu': '欧洲线路',
+            'hk': '香港线路',
+            'kr': '韩国线路',
+            'tw': '台湾线路'
             # 可以添加更多国家映射
         }
         return geolocation_map.get(country_code, "Other")
@@ -777,5 +814,5 @@ if __name__ == "__main__":
     rule_parser = RuleParser()
     rule_parser.main()
 
-    ConfigParser = ConfigParser()
-    ConfigParser.generate_singbox_route()
+    SB_ConfigParser = SB_ConfigParser()
+    SB_ConfigParser.generate_singbox_route()
