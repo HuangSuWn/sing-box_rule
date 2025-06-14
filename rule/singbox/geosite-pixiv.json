@@ -1,0 +1,20 @@
+{
+    "version": 1,
+    "rules": [
+        {
+            "domain_suffix": [
+                "pixivision.net",
+                "pixiv.org",
+                "pixiv-recommend.net",
+                "booth.pm",
+                "fanbox.cc",
+                "pixiv.net",
+                "pixiv.co.jp",
+                "pximg.net",
+                "pixiv.me",
+                "pixiv.help",
+                "ads-pixiv.net"
+            ]
+        }
+    ]
+}
