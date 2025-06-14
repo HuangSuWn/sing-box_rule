@@ -1,29 +1,10 @@
-# 域名数量: 1656
+# 域名总数: 1634
+# 白名单排除: 22 个域名
+# 域名按原始 hosts 文件出现顺序排列
+
 livew.l.qq.com
 t7z.cupid.iqiyi.com
 wxsnsdy.wxs.qq.com
-is.snssdk.com
-adsmind.gdtimg.com
-pv.sohu.com
-gw.365you.com
-x.adnet.qq.com
-mi.gdt.qq.com
-c.gdt.qq.com
-d.gdt.qq.com
-i.gdt.qq.com
-m.gdt.qq.com
-t.gdt.qq.com
-v.gdt.qq.com
-q.i.gdt.qq.com
-v2.gdt.qq.com
-ii.gdt.qq.com
-rm.gdt.qq.com
-nc.gdt.qq.com
-vr.gdt.qq.com
-rpt.gdt.qq.com
-win.gdt.qq.com
-ipv4.gdt.qq.com
-v6ii.gdt.qq.com
 video.market.xiaomi.com
 t1.a.market.xiaomi.com
 t2.a.market.xiaomi.com
