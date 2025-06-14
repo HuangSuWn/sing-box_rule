@@ -1,0 +1,97 @@
+name: Update AdHammer Ruleset
+
+on:
+  workflow_dispatch: # 允许手动触发
+  schedule:
+    - cron: '0 0 * * *' # 每天 UTC 时间 00:00 自动运行
+
+jobs:
+  build-ruleset:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        
+    - name: Install dependencies
+      run: pip install requests tqdm
+      
+    - name: Download and process hosts file
+      run: |
+        python - <<EOF
+        import os
+        import re
+        import requests
+        from tqdm import tqdm
+        
+        # 下载 hosts 文件
+        url = "https://gitlab.com/jdlingyu/ext_rules/raw/main/hosts/hosts"
+        print(f"下载 hosts 文件: {url}")
+        response = requests.get(url, stream=True)
+        total_size = int(response.headers.get('content-length', 0))
+        
+        # 保存原始文件
+        os.makedirs('temp', exist_ok=True)
+        with open('temp/original_hosts', 'wb') as f, tqdm(
+            total=total_size, unit='B', unit_scale=True, desc="下载进度"
+        ) as pbar:
+            for data in response.iter_content(chunk_size=1024):
+                f.write(data)
+                pbar.update(len(data))
+        
+        # 处理 hosts 文件
+        domains = set()
+        with open('temp/original_hosts', 'r', encoding='utf-8') as f:
+            for line in f:
+                # 移除注释和空行
+                line = line.strip()
+                if not line or line.startswith('#'):
+                    continue
+                
+                # 提取域名
+                parts = re.split(r'\s+', line)
+                if len(parts) < 2:
+                    continue
+                
+                # 只处理 0.0.0.0/127.0.0.1 开头的行
+                if parts[0] in ['0.0.0.0', '127.0.0.1', '::']:
+                    for domain in parts[1:]:
+                        # 跳过注释和空值
+                        if not domain or domain.startswith('#'):
+                            break
+                        # 标准化域名
+                        domain = domain.lower().strip()
+                        if domain and '.' in domain:
+                            domains.add(domain)
+        
+        print(f"找到 {len(domains)} 个唯一域名")
+        
+        # 保存为规则集文件
+        os.makedirs('self-host', exist_ok=True)
+        with open('self-host/ad-block.txt', 'w', encoding='utf-8') as f:
+            f.write(f"# 域名数量: {len(domains)}\n\n")
+            for domain in sorted(domains):
+                f.write(f"{domain}\n")
+        
+        print("规则集文件已生成: self-host/ad-block.txt")
+        EOF
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ad-block
+        path: |
+          self-host/ad-block.txt
+        
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add self-host/ad-block.txt
+        git commit -m "自动更新规则集" || echo "没有变更，跳过提交"
+        git push
