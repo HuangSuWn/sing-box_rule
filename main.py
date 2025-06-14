@@ -627,7 +627,7 @@ class SB_ConfigParser:
         rules = []
         rule_set = []
 
-        for file in os.listdir('./rule/singbox'):
+        for file in os.listdir('./rule'):
             if file.endswith('.srs'):
                 tag = os.path.splitext(file)[0]
                 # 添加规则集
