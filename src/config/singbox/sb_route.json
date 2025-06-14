@@ -68,6 +68,13 @@
         "download_detour":"下载 (海外服务)"
       },
       {
+        "tag":"adguard-blocker@mobile",
+        "type":"remote",
+        "format":"binary",
+        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/adguard-blocker@mobile.srs",
+        "download_detour":"下载 (海外服务)"
+      },
+      {
         "tag":"geoip-google",
         "type":"remote",
         "format":"binary",
