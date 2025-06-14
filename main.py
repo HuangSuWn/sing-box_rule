@@ -611,13 +611,6 @@ class RuleParser:
             os.system(f"sing-box rule-set compile --output {srs_path} {json_file_path}")
             logging.debug(f"成功生成 SRS 文件 {srs_path}")
 
-        #### 调用工具函数 将 sing-box 规则转化为 Surge/Shadowrocket 规则
-        convert_json_to_surge(output_directory)
-        convert_json_to_clash(output_directory)
-
-        convert_yaml_to_mrs(config.clash_output_directory)
-
-
 class SB_ConfigParser:
     def __init__(self):
         self.config = config
