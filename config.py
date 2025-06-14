@@ -15,7 +15,7 @@ class Config:
         self.rule_dir = './rule'
         self.source_dir = './source'
 
-        self.singbox_output_directory = os.path.join(self.rule_dir)
+        self.singbox_output_directory = os.path.join(self.rule_dir, 'singbox')
 
         self.trust_upstream = False
         self.ls_index = 1
