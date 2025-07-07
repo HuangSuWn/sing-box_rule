@@ -22,7 +22,7 @@
     {
       "domain_regex": [
         "vip\\.ffzy-online(.*)?com$",
-        "(?:v(?:ip\d*)?|cdn)\.[a-z0-9-]*cdn[a-z0-9-]*\.com$"
+        "(?:v(?:ip\d*)?|cdn)\\.[a-z0-9-]*cdn[a-z0-9-]*\\.com$"
       ]
     }
   ]
