@@ -1,5 +1,5 @@
-2025-07-07 20:24:44,264 - INFO - pixiv 规则整理完成:
-2025-07-07 20:24:44,264 - INFO - 类型: geosite
+2025-07-07 20:26:54,093 - INFO - pixiv 规则整理完成:
+2025-07-07 20:26:54,093 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 11
 规则分析:
@@ -9,8 +9,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-07-07 20:24:45,398 - INFO - bilibili 规则整理完成:
-2025-07-07 20:24:45,398 - INFO - 类型: geosite
+2025-07-07 20:26:55,121 - INFO - bilibili 规则整理完成:
+2025-07-07 20:26:55,121 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 1
 剩余规则总数: 49
 规则分析:
@@ -20,7 +20,7 @@ domain 被过滤掉的条目数量: 1
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-07-07 20:24:45,398 - INFO - 类型: geoip
+2025-07-07 20:26:55,121 - INFO - 类型: geoip
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 8
 规则分析:
@@ -30,8 +30,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-07-07 20:24:45,802 - INFO - youtube 规则整理完成:
-2025-07-07 20:24:45,802 - INFO - 类型: geosite
+2025-07-07 20:26:55,345 - INFO - youtube 规则整理完成:
+2025-07-07 20:26:55,345 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 176
 规则分析:
@@ -41,8 +41,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-07-07 20:24:46,173 - INFO - ad-block 规则整理完成:
-2025-07-07 20:24:46,173 - INFO - 类型: geosite
+2025-07-07 20:26:55,540 - INFO - ad-block 规则整理完成:
+2025-07-07 20:26:55,540 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 1336
 规则分析:
@@ -52,8 +52,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-07-07 20:24:46,912 - INFO - google 规则整理完成:
-2025-07-07 20:24:46,912 - INFO - 类型: geosite
+2025-07-07 20:26:56,152 - INFO - google 规则整理完成:
+2025-07-07 20:26:56,152 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 201
 剩余规则总数: 858
 规则分析:
@@ -63,7 +63,7 @@ domain 被过滤掉的条目数量: 201
   process_name 条目数: 0
   domain_regex 条目数: 3
 --------------------------------------------------
-2025-07-07 20:24:46,912 - INFO - 类型: geoip
+2025-07-07 20:26:56,152 - INFO - 类型: geoip
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 4289
 规则分析:
@@ -73,8 +73,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-07-07 20:24:47,708 - INFO - telegram 规则整理完成:
-2025-07-07 20:24:47,709 - INFO - 类型: geosite
+2025-07-07 20:26:56,962 - INFO - telegram 规则整理完成:
+2025-07-07 20:26:56,962 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 19
 规则分析:
@@ -84,7 +84,7 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-07-07 20:24:47,709 - INFO - 类型: geoip
+2025-07-07 20:26:56,962 - INFO - 类型: geoip
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 12
 规则分析:
@@ -94,28 +94,28 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-07-07 20:25:04,641 - ERROR - 下载 JSON 文件失败: https://raw.githubusercontent.com/vstar37/sing-box-ruleset/main/self-host/geoip-direct@amos.json, 错误: 429 Client Error: Too Many Requests for url: https://raw.githubusercontent.com/vstar37/sing-box-ruleset/main/self-host/geoip-direct@amos.json
-2025-07-07 20:25:06,668 - ERROR - 解析 JSON 数据时出错: 'NoneType' object has no attribute 'get'
-2025-07-07 20:25:06,682 - INFO - cn 规则整理完成:
-2025-07-07 20:25:06,682 - INFO - 类型: geosite
+2025-07-07 20:26:57,290 - ERROR - 解析 JSON 文件失败: https://github.com/HGSUWN/sing-box_rule/raw/refs/heads/main/self-host/cn_domain.json, 错误: Invalid \escape: line 25 column 19 (char 542)
+2025-07-07 20:27:08,797 - ERROR - 解析 JSON 数据时出错: 'NoneType' object has no attribute 'get'
+2025-07-07 20:27:13,458 - INFO - cn 规则整理完成:
+2025-07-07 20:27:13,458 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 201
-剩余规则总数: 125197
+剩余规则总数: 125178
 规则分析:
   domain 条目数: 515
-  domain_suffix 条目数: 124655
+  domain_suffix 条目数: 124637
   ip_cidr 条目数: 0
   process_name 条目数: 0
-  domain_regex 条目数: 27
+  domain_regex 条目数: 26
 --------------------------------------------------
-2025-07-07 20:25:06,682 - INFO - 类型: geoip
+2025-07-07 20:27:13,458 - INFO - 类型: geoip
 domain 被过滤掉的条目数量: 0
-剩余规则总数: 31560
+剩余规则总数: 31566
 规则分析:
   domain 条目数: 1
   domain_suffix 条目数: 0
-  ip_cidr 条目数: 31559
+  ip_cidr 条目数: 31565
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-07-07 20:25:08,033 - INFO - ✅ sing-box 配置合并成功
-2025-07-07 20:25:08,033 - INFO - ✅ 已将配置文件移动至: /home/runner/work/sing-box_rule/sing-box_rule/template/singbox/config.json
+2025-07-07 20:27:14,745 - INFO - ✅ sing-box 配置合并成功
+2025-07-07 20:27:14,745 - INFO - ✅ 已将配置文件移动至: /home/runner/work/sing-box_rule/sing-box_rule/template/singbox/config.json
