@@ -9,23 +9,20 @@
         "fanqxsw.com",
         "rttks.com",
         "aiyingshis.com",
-        "v.cdnlz22.com",
         "vvip.high26-playback.com",
         "dongmanhuayuan.myheartsite.com",
         "0668m.com",
         "imgurll.ggvip.click",
         "wogg.one",
         "api.xinac.net",
-        "cdn.ibootcdn.com",
-        "cdn.wlcdn88.com",
         "download-cdn.123295.com",
-        "c1.rrcdnbf4.com",
-        "vip1.lz-cdn5.com"
+        "c1.rrcdnbf4.com"
       ]
     },
     {
       "domain_regex": [
-        "vip\\.ffzy-online(.*)?com$"
+        "vip\\.ffzy-online(.*)?com$",
+        "(?:v(?:ip\d*)?|cdn)\.[a-z0-9-]*cdn[a-z0-9-]*\.com$"
       ]
     }
   ]
