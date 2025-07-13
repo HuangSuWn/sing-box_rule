@@ -89,6 +89,13 @@
         "download_detour":"下载 (海外服务)"
       },
       {
+        "tag":"geosite-fakeip-filter",
+        "type":"remote",
+        "format":"binary",
+        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geosite-fakeip-filter.srs",
+        "download_detour":"下载 (海外服务)"
+      },
+      {
         "tag":"geosite-bilibili",
         "type":"remote",
         "format":"binary",
