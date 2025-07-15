@@ -86,14 +86,14 @@
         "laodifang.tv",
         "5b5v7z0i9f4.shop",
         "ps.ryzypics.com",
-        "qp.ke-mi.vip",
-        "jx1.ke-mi.vip"
+        "vip.dytt-kan.com"
       ]
     },
     {
       "domain_regex": [
         "vip\\.ffzy-online(.*)?com$",
-        "(?:v(?:ip\\d*)?|cdn)\\.[a-z0-9-]*cdn[a-z0-9-]*\\.com$"
+        "(?:v(?:ip\\d*)?|cdn)\\.[a-z0-9-]*cdn[a-z0-9-]*\\.com$",
+        "(qp|jx1|cdn)\\.ke-mi\\.vip$"
       ]
     }
   ]
