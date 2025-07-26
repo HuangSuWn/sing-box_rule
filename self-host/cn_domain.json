@@ -95,14 +95,17 @@
         "fqdm.cc",
         "kandying.com",
         "yczy5.com",
-        "assets.heimuer.tv"
+        "assets.heimuer.tv",
+        "hm.qg50.com",
+        "dm.92cj.com"
       ]
     },
     {
       "domain_regex": [
         "vip\\.ffzy-online(.*)?com$",
         "(?:v(?:ip\\d*)?|cdn)\\.[a-z0-9-]*cdn[a-z0-9-]*\\.com$",
-        "(qp|jx1|cdn)\\.ke-mi\\.vip$"
+        "(qp|jx1|cdn)\\.ke-mi\\.vip$",
+        "www\\.lmm[0-9]{2,3}\\.com$"
       ]
     }
   ]
