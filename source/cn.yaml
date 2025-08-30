@@ -12,7 +12,6 @@ geosite:
   - "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs"
 
   # 第三方扩展规则
-  - "https://github.com/HGSUWN/sing-box_rule/raw/refs/heads/main/self-host/cn_domain.json"
   - "https://github.com/DustinWin/ruleset_geodata/raw/refs/heads/sing-box-ruleset/cn.srs"
   - "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/games-cn.srs"
   - "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/private.srs"
