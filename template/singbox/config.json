@@ -374,6 +374,12 @@
       },
       {
         "type": "remote",
+        "tag": "geosite-proxy",
+        "url": "https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geosite-proxy.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
         "tag": "geosite-pixiv",
         "url": "https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geosite-pixiv.srs",
         "download_detour": "下载 (海外服务)"
