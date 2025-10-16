@@ -5,3 +5,5 @@ geosite:
   - "https://github.com/DustinWin/ruleset_geodata/raw/refs/heads/sing-box-ruleset/proxy.srs"
   - "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt"
   - "https://github.com/peiyingyao/Rule-for-OCD/raw/refs/heads/master/rule/Clash/Proxy/Proxy_Domain.txt"
+  - "https://raw.githubusercontent.com/Yuu518/sing-box-rules/rule_set/rule_set_site/geolocation-!cn.srs"
+  
