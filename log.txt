@@ -1,16 +1,5 @@
-2025-10-16 21:01:57,045 - INFO - youtube 规则整理完成:
-2025-10-16 21:01:57,046 - INFO - 类型: geosite
-domain 被过滤掉的条目数量: 0
-剩余规则总数: 176
-规则分析:
-  domain 条目数: 0
-  domain_suffix 条目数: 176
-  ip_cidr 条目数: 0
-  process_name 条目数: 0
-  domain_regex 条目数: 0
---------------------------------------------------
-2025-10-16 21:01:57,619 - INFO - telegram 规则整理完成:
-2025-10-16 21:01:57,619 - INFO - 类型: geosite
+2025-10-17 18:07:09,782 - INFO - telegram 规则整理完成:
+2025-10-17 18:07:09,782 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 19
 规则分析:
@@ -20,7 +9,7 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-16 21:01:57,619 - INFO - 类型: geoip
+2025-10-17 18:07:09,782 - INFO - 类型: geoip
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 12
 规则分析:
@@ -30,101 +19,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-16 21:01:57,762 - ERROR - 下载 JSON 文件失败: https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/refs/heads/main/self-host/filter-fakeip.json, 错误: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/refs/heads/main/self-host/filter-fakeip.json
-2025-10-16 21:01:58,068 - ERROR - 解析 JSON 数据时出错: 'NoneType' object has no attribute 'get'
-2025-10-16 21:01:58,068 - INFO - fakeip-filter 规则整理完成:
-2025-10-16 21:01:58,069 - INFO - 类型: geosite
-domain 被过滤掉的条目数量: 0
-剩余规则总数: 91
-规则分析:
-  domain 条目数: 36
-  domain_suffix 条目数: 49
-  ip_cidr 条目数: 0
-  process_name 条目数: 0
-  domain_regex 条目数: 6
---------------------------------------------------
-2025-10-16 21:01:58,558 - INFO - ad-block 规则整理完成:
-2025-10-16 21:01:58,558 - INFO - 类型: geosite
-domain 被过滤掉的条目数量: 0
-剩余规则总数: 1336
-规则分析:
-  domain 条目数: 0
-  domain_suffix 条目数: 1336
-  ip_cidr 条目数: 0
-  process_name 条目数: 0
-  domain_regex 条目数: 0
---------------------------------------------------
-2025-10-16 21:01:59,129 - ERROR - 下载 JSON 文件失败: https://raw.githubusercontent.com/vstar37/sing-box-ruleset/main/self-host/geosite-direct@amos.json, 错误: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/vstar37/sing-box-ruleset/main/self-host/geosite-direct@amos.json
-2025-10-16 21:02:11,876 - ERROR - 下载 https://raw.githubusercontent.com/Yuu518/sing-box-rules/rule_set/rule_set_site/geolocation-!cn@cn.srs 时出错: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/Yuu518/sing-box-rules/rule_set/rule_set_site/geolocation-!cn@cn.srs
-2025-10-16 21:02:11,877 - ERROR - 下载 .srs 文件失败: https://raw.githubusercontent.com/Yuu518/sing-box-rules/rule_set/rule_set_site/geolocation-!cn@cn.srs
-2025-10-16 21:02:12,704 - ERROR - 解析 JSON 数据时出错: 'NoneType' object has no attribute 'get'
-2025-10-16 21:02:12,735 - ERROR - 解析 JSON 数据时出错: 'NoneType' object has no attribute 'get'
-2025-10-16 21:02:17,483 - ERROR - 下载 JSON 文件失败: https://raw.githubusercontent.com/vstar37/sing-box-ruleset/main/self-host/geoip-direct@amos.json, 错误: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/vstar37/sing-box-ruleset/main/self-host/geoip-direct@amos.json
-2025-10-16 21:02:17,496 - ERROR - 解析 JSON 数据时出错: 'NoneType' object has no attribute 'get'
-2025-10-16 21:02:17,508 - INFO - cn 规则整理完成:
-2025-10-16 21:02:17,508 - INFO - 类型: geosite
-domain 被过滤掉的条目数量: 204
-剩余规则总数: 122065
-规则分析:
-  domain 条目数: 545
-  domain_suffix 条目数: 121492
-  ip_cidr 条目数: 0
-  process_name 条目数: 0
-  domain_regex 条目数: 28
---------------------------------------------------
-2025-10-16 21:02:17,508 - INFO - 类型: geoip
-domain 被过滤掉的条目数量: 0
-剩余规则总数: 30957
-规则分析:
-  domain 条目数: 1
-  domain_suffix 条目数: 0
-  ip_cidr 条目数: 30956
-  process_name 条目数: 0
-  domain_regex 条目数: 0
---------------------------------------------------
-2025-10-16 21:02:20,114 - ERROR - 下载 https://raw.githubusercontent.com/Yuu518/sing-box-rules/rule_set/rule_set_site/geolocation-cn@!cn.srs 时出错: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/Yuu518/sing-box-rules/rule_set/rule_set_site/geolocation-cn@!cn.srs
-2025-10-16 21:02:20,115 - ERROR - 下载 .srs 文件失败: https://raw.githubusercontent.com/Yuu518/sing-box-rules/rule_set/rule_set_site/geolocation-cn@!cn.srs
-2025-10-16 21:02:20,824 - ERROR - 下载 https://raw.githubusercontent.com/UptonEdward/sing-geosite/rule-set/geosite-cn@!cn.srs 时出错: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/UptonEdward/sing-geosite/rule-set/geosite-cn@!cn.srs
-2025-10-16 21:02:20,824 - ERROR - 下载 .srs 文件失败: https://raw.githubusercontent.com/UptonEdward/sing-geosite/rule-set/geosite-cn@!cn.srs
-2025-10-16 21:02:20,946 - ERROR - 下载 https://raw.githubusercontent.com/UptonEdward/sing-geosite/rule-set/geosite-geolocation-!cn.srs 时出错: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/UptonEdward/sing-geosite/rule-set/geosite-geolocation-!cn.srs
-2025-10-16 21:02:20,947 - ERROR - 下载 .srs 文件失败: https://raw.githubusercontent.com/UptonEdward/sing-geosite/rule-set/geosite-geolocation-!cn.srs
-2025-10-16 21:02:20,963 - ERROR - 解析 JSON 数据时出错: 'NoneType' object has no attribute 'get'
-2025-10-16 21:02:20,966 - ERROR - 解析 JSON 数据时出错: 'NoneType' object has no attribute 'get'
-2025-10-16 21:02:20,966 - ERROR - 解析 JSON 数据时出错: 'NoneType' object has no attribute 'get'
-2025-10-16 21:02:21,285 - INFO - proxy 规则整理完成:
-2025-10-16 21:02:21,286 - INFO - 类型: geosite
-domain 被过滤掉的条目数量: 480
-剩余规则总数: 32989
-规则分析:
-  domain 条目数: 122
-  domain_suffix 条目数: 32719
-  ip_cidr 条目数: 0
-  process_name 条目数: 0
-  domain_regex 条目数: 148
---------------------------------------------------
-2025-10-16 21:02:22,054 - INFO - google 规则整理完成:
-2025-10-16 21:02:22,054 - INFO - 类型: geosite
-domain 被过滤掉的条目数量: 201
-剩余规则总数: 858
-规则分析:
-  domain 条目数: 29
-  domain_suffix 条目数: 826
-  ip_cidr 条目数: 0
-  process_name 条目数: 0
-  domain_regex 条目数: 3
---------------------------------------------------
-2025-10-16 21:02:22,054 - INFO - 类型: geoip
-domain 被过滤掉的条目数量: 0
-剩余规则总数: 4390
-规则分析:
-  domain 条目数: 0
-  domain_suffix 条目数: 0
-  ip_cidr 条目数: 4390
-  process_name 条目数: 0
-  domain_regex 条目数: 0
---------------------------------------------------
-2025-10-16 21:02:23,630 - INFO - bilibili 规则整理完成:
-2025-10-16 21:02:23,630 - INFO - 类型: geosite
+2025-10-17 18:07:11,317 - INFO - bilibili 规则整理完成:
+2025-10-17 18:07:11,317 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 1
 剩余规则总数: 49
 规则分析:
@@ -134,7 +30,7 @@ domain 被过滤掉的条目数量: 1
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-16 21:02:23,630 - INFO - 类型: geoip
+2025-10-17 18:07:11,317 - INFO - 类型: geoip
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 8
 规则分析:
@@ -144,8 +40,32 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-16 21:02:24,030 - INFO - pixiv 规则整理完成:
-2025-10-16 21:02:24,030 - INFO - 类型: geosite
+2025-10-17 18:07:11,481 - ERROR - 下载 JSON 文件失败: https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/refs/heads/main/self-host/filter-fakeip.json, 错误: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/refs/heads/main/self-host/filter-fakeip.json
+2025-10-17 18:07:11,941 - ERROR - 解析 JSON 数据时出错: 'NoneType' object has no attribute 'get'
+2025-10-17 18:07:11,942 - INFO - fakeip-filter 规则整理完成:
+2025-10-17 18:07:11,942 - INFO - 类型: geosite
+domain 被过滤掉的条目数量: 0
+剩余规则总数: 91
+规则分析:
+  domain 条目数: 36
+  domain_suffix 条目数: 49
+  ip_cidr 条目数: 0
+  process_name 条目数: 0
+  domain_regex 条目数: 6
+--------------------------------------------------
+2025-10-17 18:07:12,570 - INFO - ad-block 规则整理完成:
+2025-10-17 18:07:12,570 - INFO - 类型: geosite
+domain 被过滤掉的条目数量: 0
+剩余规则总数: 1336
+规则分析:
+  domain 条目数: 0
+  domain_suffix 条目数: 1336
+  ip_cidr 条目数: 0
+  process_name 条目数: 0
+  domain_regex 条目数: 0
+--------------------------------------------------
+2025-10-17 18:07:13,055 - INFO - pixiv 规则整理完成:
+2025-10-17 18:07:13,055 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 11
 规则分析:
@@ -155,5 +75,85 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-16 21:02:25,447 - INFO - ✅ sing-box 配置合并成功
-2025-10-16 21:02:25,447 - INFO - ✅ 已将配置文件移动至: /home/runner/work/sing-box_rule/sing-box_rule/template/singbox/config.json
+2025-10-17 18:07:19,204 - ERROR - 下载 https://raw.githubusercontent.com/Yuu518/sing-box-rules/rule_set/rule_set_site/geolocation-!cn@cn.srs 时出错: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/Yuu518/sing-box-rules/rule_set/rule_set_site/geolocation-!cn@cn.srs
+2025-10-17 18:07:19,206 - ERROR - 下载 .srs 文件失败: https://raw.githubusercontent.com/Yuu518/sing-box-rules/rule_set/rule_set_site/geolocation-!cn@cn.srs
+2025-10-17 18:07:24,808 - ERROR - 下载 JSON 文件失败: https://raw.githubusercontent.com/vstar37/sing-box-ruleset/main/self-host/geosite-direct@amos.json, 错误: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/vstar37/sing-box-ruleset/main/self-host/geosite-direct@amos.json
+2025-10-17 18:07:29,201 - ERROR - 解析 JSON 数据时出错: 'NoneType' object has no attribute 'get'
+2025-10-17 18:07:29,208 - ERROR - 解析 JSON 数据时出错: 'NoneType' object has no attribute 'get'
+2025-10-17 18:07:31,174 - ERROR - 下载 JSON 文件失败: https://raw.githubusercontent.com/vstar37/sing-box-ruleset/main/self-host/geoip-direct@amos.json, 错误: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/vstar37/sing-box-ruleset/main/self-host/geoip-direct@amos.json
+2025-10-17 18:07:35,485 - ERROR - 解析 JSON 数据时出错: 'NoneType' object has no attribute 'get'
+2025-10-17 18:07:35,500 - INFO - cn 规则整理完成:
+2025-10-17 18:07:35,500 - INFO - 类型: geosite
+domain 被过滤掉的条目数量: 204
+剩余规则总数: 122056
+规则分析:
+  domain 条目数: 545
+  domain_suffix 条目数: 121483
+  ip_cidr 条目数: 0
+  process_name 条目数: 0
+  domain_regex 条目数: 28
+--------------------------------------------------
+2025-10-17 18:07:35,501 - INFO - 类型: geoip
+domain 被过滤掉的条目数量: 0
+剩余规则总数: 30987
+规则分析:
+  domain 条目数: 1
+  domain_suffix 条目数: 0
+  ip_cidr 条目数: 30986
+  process_name 条目数: 0
+  domain_regex 条目数: 0
+--------------------------------------------------
+2025-10-17 18:07:35,676 - ERROR - 下载 https://raw.githubusercontent.com/UptonEdward/sing-geosite/rule-set/geosite-cn@!cn.srs 时出错: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/UptonEdward/sing-geosite/rule-set/geosite-cn@!cn.srs
+2025-10-17 18:07:35,678 - ERROR - 下载 .srs 文件失败: https://raw.githubusercontent.com/UptonEdward/sing-geosite/rule-set/geosite-cn@!cn.srs
+2025-10-17 18:07:37,898 - ERROR - 下载 https://raw.githubusercontent.com/UptonEdward/sing-geosite/rule-set/geosite-geolocation-!cn.srs 时出错: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/UptonEdward/sing-geosite/rule-set/geosite-geolocation-!cn.srs
+2025-10-17 18:07:37,899 - ERROR - 下载 .srs 文件失败: https://raw.githubusercontent.com/UptonEdward/sing-geosite/rule-set/geosite-geolocation-!cn.srs
+2025-10-17 18:07:39,362 - ERROR - 下载 https://raw.githubusercontent.com/Yuu518/sing-box-rules/rule_set/rule_set_site/geolocation-cn@!cn.srs 时出错: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/Yuu518/sing-box-rules/rule_set/rule_set_site/geolocation-cn@!cn.srs
+2025-10-17 18:07:39,363 - ERROR - 下载 .srs 文件失败: https://raw.githubusercontent.com/Yuu518/sing-box-rules/rule_set/rule_set_site/geolocation-cn@!cn.srs
+2025-10-17 18:07:39,375 - ERROR - 解析 JSON 数据时出错: 'NoneType' object has no attribute 'get'
+2025-10-17 18:07:39,381 - ERROR - 解析 JSON 数据时出错: 'NoneType' object has no attribute 'get'
+2025-10-17 18:07:39,382 - ERROR - 解析 JSON 数据时出错: 'NoneType' object has no attribute 'get'
+2025-10-17 18:07:39,764 - INFO - proxy 规则整理完成:
+2025-10-17 18:07:39,764 - INFO - 类型: geosite
+domain 被过滤掉的条目数量: 480
+剩余规则总数: 32989
+规则分析:
+  domain 条目数: 122
+  domain_suffix 条目数: 32719
+  ip_cidr 条目数: 0
+  process_name 条目数: 0
+  domain_regex 条目数: 148
+--------------------------------------------------
+2025-10-17 18:07:40,920 - INFO - google 规则整理完成:
+2025-10-17 18:07:40,920 - INFO - 类型: geosite
+domain 被过滤掉的条目数量: 201
+剩余规则总数: 858
+规则分析:
+  domain 条目数: 29
+  domain_suffix 条目数: 826
+  ip_cidr 条目数: 0
+  process_name 条目数: 0
+  domain_regex 条目数: 3
+--------------------------------------------------
+2025-10-17 18:07:40,920 - INFO - 类型: geoip
+domain 被过滤掉的条目数量: 0
+剩余规则总数: 4448
+规则分析:
+  domain 条目数: 0
+  domain_suffix 条目数: 0
+  ip_cidr 条目数: 4448
+  process_name 条目数: 0
+  domain_regex 条目数: 0
+--------------------------------------------------
+2025-10-17 18:07:41,504 - INFO - youtube 规则整理完成:
+2025-10-17 18:07:41,504 - INFO - 类型: geosite
+domain 被过滤掉的条目数量: 0
+剩余规则总数: 176
+规则分析:
+  domain 条目数: 0
+  domain_suffix 条目数: 176
+  ip_cidr 条目数: 0
+  process_name 条目数: 0
+  domain_regex 条目数: 0
+--------------------------------------------------
+2025-10-17 18:07:42,966 - INFO - ✅ sing-box 配置合并成功
+2025-10-17 18:07:42,966 - INFO - ✅ 已将配置文件移动至: /home/runner/work/sing-box_rule/sing-box_rule/template/singbox/config.json
