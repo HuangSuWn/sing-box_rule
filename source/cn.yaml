@@ -41,3 +41,4 @@ geoip:
 
   # 自定义直连规则
   - "https://raw.githubusercontent.com/vstar37/sing-box-ruleset/main/self-host/geoip-direct@amos.json"
+  - "https://ruleset.skk.moe/Clash/ip/china_ip.txt"
