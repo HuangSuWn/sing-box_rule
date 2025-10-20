@@ -40,20 +40,6 @@
     ],
     "rule_set":[
       {
-        "tag":"geosite-fakeip-filter",
-        "type":"remote",
-        "format":"binary",
-        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geosite-fakeip-filter.srs",
-        "download_detour":"下载 (海外服务)"
-      },
-      {
-        "tag":"geoip-telegram",
-        "type":"remote",
-        "format":"binary",
-        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geoip-telegram.srs",
-        "download_detour":"下载 (海外服务)"
-      },
-      {
         "tag":"geosite-ad-block",
         "type":"remote",
         "format":"binary",
@@ -61,45 +47,10 @@
         "download_detour":"下载 (海外服务)"
       },
       {
-        "tag":"geosite-google",
+        "tag":"geosite-bilibili",
         "type":"remote",
         "format":"binary",
-        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geosite-google.srs",
-        "download_detour":"下载 (海外服务)"
-      },
-      {
-        "tag":"geosite-cn",
-        "type":"remote",
-        "format":"binary",
-        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geosite-cn.srs",
-        "download_detour":"下载 (海外服务)"
-      },
-      {
-        "tag":"geosite-proxy",
-        "type":"remote",
-        "format":"binary",
-        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geosite-proxy.srs",
-        "download_detour":"下载 (海外服务)"
-      },
-      {
-        "tag":"geoip-google",
-        "type":"remote",
-        "format":"binary",
-        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geoip-google.srs",
-        "download_detour":"下载 (海外服务)"
-      },
-      {
-        "tag":"geoip-cn",
-        "type":"remote",
-        "format":"binary",
-        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geoip-cn.srs",
-        "download_detour":"下载 (海外服务)"
-      },
-      {
-        "tag":"geosite-youtube",
-        "type":"remote",
-        "format":"binary",
-        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geosite-youtube.srs",
+        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geosite-bilibili.srs",
         "download_detour":"下载 (海外服务)"
       },
       {
@@ -110,10 +61,17 @@
         "download_detour":"下载 (海外服务)"
       },
       {
-        "tag":"geoip-bilibili",
+        "tag":"geosite-youtube",
         "type":"remote",
         "format":"binary",
-        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geoip-bilibili.srs",
+        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geosite-youtube.srs",
+        "download_detour":"下载 (海外服务)"
+      },
+      {
+        "tag":"geosite-proxy",
+        "type":"remote",
+        "format":"binary",
+        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geosite-proxy.srs",
         "download_detour":"下载 (海外服务)"
       },
       {
@@ -124,10 +82,52 @@
         "download_detour":"下载 (海外服务)"
       },
       {
-        "tag":"geosite-bilibili",
+        "tag":"geoip-cn",
         "type":"remote",
         "format":"binary",
-        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geosite-bilibili.srs",
+        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geoip-cn.srs",
+        "download_detour":"下载 (海外服务)"
+      },
+      {
+        "tag":"geoip-telegram",
+        "type":"remote",
+        "format":"binary",
+        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geoip-telegram.srs",
+        "download_detour":"下载 (海外服务)"
+      },
+      {
+        "tag":"geosite-fakeip-filter",
+        "type":"remote",
+        "format":"binary",
+        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geosite-fakeip-filter.srs",
+        "download_detour":"下载 (海外服务)"
+      },
+      {
+        "tag":"geosite-cn",
+        "type":"remote",
+        "format":"binary",
+        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geosite-cn.srs",
+        "download_detour":"下载 (海外服务)"
+      },
+      {
+        "tag":"geosite-google",
+        "type":"remote",
+        "format":"binary",
+        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geosite-google.srs",
+        "download_detour":"下载 (海外服务)"
+      },
+      {
+        "tag":"geoip-bilibili",
+        "type":"remote",
+        "format":"binary",
+        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geoip-bilibili.srs",
+        "download_detour":"下载 (海外服务)"
+      },
+      {
+        "tag":"geoip-google",
+        "type":"remote",
+        "format":"binary",
+        "url":"https://raw.githubusercontent.com/vstar37/proxy-ruleset-manager/main/rule/singbox/geoip-google.srs",
         "download_detour":"下载 (海外服务)"
       }
     ],
