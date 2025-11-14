@@ -17,6 +17,7 @@ geosite:
   - "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/private.srs"
   - "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/games-cn.srs"
   - "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/google-cn.srs"
+  - "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/apple-cn.srs"
   - "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/microsoft-cn.srs"
   - "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"
   - "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/rule/Clash/ChinaMax/ChinaMax_Domain.yaml"
